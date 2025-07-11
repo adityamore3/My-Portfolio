@@ -1,48 +1,93 @@
+/* Base & background */
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   background-color: #0f172a;
   background-image: radial-gradient(#ffffff11 1px, transparent 1px),
                     radial-gradient(#ffffff11 1px, transparent 1px);
   background-size: 20px 20px;
   background-position: 0 0, 10px 10px;
   color: white;
-  overflow-x: hidden;
 }
 
-/* Floating Icons: stop 100px above bottom so they never appear in the footer */
+/* Desktop nav underlines */
+nav ul li a {
+  position: relative;
+  transition: color 0.3s;
+}
+nav ul li a::after {
+  content: '';
+  position: absolute; left: 0; bottom: -4px;
+  width: 0; height: 2px; background: #06b6d4;
+  transition: width 0.3s;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Mobile backdrop */
+#mobile-backdrop {
+  transition: opacity 0.3s ease;
+}
+#mobile-backdrop.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Drawer */
+#mobile-menu {
+  transform: translateX(-100%);
+}
+#mobile-menu.open {
+  transform: translateX(0);
+}
+
+/* Mobile link styles */
+.mobile-link {
+  width: 100%;
+  text-align: left;
+  transition: color 0.2s;
+}
+.mobile-link:hover {
+  color: #06b6d4;
+}
+
+/* Social buttons */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  background: white;
+  border-radius: 9999px;
+  transition: background 0.3s;
+}
+.social-btn i {
+  font-size: 1.5rem;
+  color: #06b6d4;
+}
+.social-btn:hover {
+  background: #e0f7fa;
+}
+
+/* Floating logos */
 #floating-logos {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 100px;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 100px;
+  pointer-events: none; overflow: hidden; z-index: 10;
 }
-
 @keyframes floatLogo {
-  0%   { transform: translate(var(--x1), var(--y1)) scale(var(--s)); opacity: 0; }
-  10%  { opacity: 1; }
-  90%  { opacity: 1; }
-  100% { transform: translate(var(--x2), var(--y2)) scale(var(--s)); opacity: 0; }
+  0%,100% { opacity: 0; }
+  10%,90% { opacity: 1; }
+  0% { transform: translate(var(--x1),var(--y1)) scale(var(--s)); }
+  100% { transform: translate(var(--x2),var(--y2)) scale(var(--s)); }
 }
-
 .floating-logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 32px;
-  height: 32px;
-  will-change: transform, opacity;
-  animation-name: floatLogo;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  position: absolute; width: 32px; height: 32px;
+  animation: floatLogo linear infinite;
 }
 
+/* Wave animation */
 @keyframes wave {
-  0%,100% { transform: rotate(0deg) }
+  0%,100% { transform: rotate(0) }
   15%     { transform: rotate(14deg) }
   30%     { transform: rotate(-8deg) }
   45%     { transform: rotate(14deg) }
