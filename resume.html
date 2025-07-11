@@ -27,11 +27,11 @@
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col overflow-x-hidden">
 
   <!-- NAVBAR -->
   <nav class="fixed w-full bg-[#0f172a]/90 backdrop-blur-sm px-6 py-4 flex items-center justify-between z-50 shadow-md">
-  <a href="index.html" class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">&lt;Aditya More /&gt;</a>
+    <a href="index.html" class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">&lt;Aditya More /&gt;</a>
     <ul class="hidden md:flex space-x-8 items-center text-lg text-white">
       <li><a href="index.html" class="hover:text-cyan-300 transition"><i class="ri-home-4-line mr-1"></i>Home</a></li>
       <li><a href="about.html" class="hover:text-cyan-300 transition"><i class="ri-user-line mr-1"></i>About</a></li>
@@ -39,8 +39,23 @@
       <li><a href="resume.html" class="text-cyan-300 transition"><i class="ri-file-list-line mr-1"></i>Resume</a></li>
       <li><a href="blog.html" class="hover:text-cyan-300 transition"><i class="ri-discuss-line mr-1"></i>Blogs</a></li>
     </ul>
-    <button class="md:hidden text-2xl text-white"><i class="ri-menu-line"></i></button>
+    <button id="burger" class="md:hidden text-2xl text-white z-50">
+      <i class="ri-menu-line"></i>
+    </button>
   </nav>
+
+  <!-- mobile backdrop & drawer -->
+  <div id="mobile-backdrop" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
+  <aside id="mobile-menu"
+         class="fixed inset-y-0 left-0 w-3/4 max-w-xs bg-[#0f172a] backdrop-blur-sm transform -translate-x-full transition-transform duration-300 ease-in-out z-50 pt-24">
+    <ul class="flex flex-col items-start space-y-6 px-6 text-2xl text-white">
+      <li><a href="index.html" class="hover:text-cyan-300 transition">Home</a></li>
+      <li><a href="about.html" class="hover:text-cyan-300 transition">About</a></li>
+      <li><a href="project.html" class="hover:text-cyan-300 transition">Projects</a></li>
+      <li><a href="resume.html" class="hover:text-cyan-300 transition">Resume</a></li>
+      <li><a href="blog.html" class="hover:text-cyan-300 transition">Blogs</a></li>
+    </ul>
+  </aside>
 
   <!-- Top Download Button -->
   <div class="pt-32 pb-6 flex justify-center">
@@ -83,20 +98,41 @@
       <span>Designed by Aditya More</span>
       <span class="mt-2 md:mt-0">Copyright © 2025</span>
       <div class="flex space-x-4 mt-4 md:mt-0 justify-center">
-        <a href="https://github.com/adityamore3" target="_blank" class="hover:text-cyan-300">
-          <i class="fab fa-github text-lg"></i>
-        </a>
-        <a href="mailto:adieeoffical@gmail.com" class="hover:text-cyan-300">
-          <i class="fas fa-envelope text-lg"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/aditya-more-682233274/" target="_blank" class="hover:text-cyan-300">
-          <i class="fab fa-linkedin-in text-lg"></i>
-        </a>
-        <a href="https://medium.com/@adityamore7860" target="_blank" class="hover:text-cyan-300">
-          <i class="fab fa-medium-m text-lg"></i>
-        </a>
+        <a href="https://github.com/adityamore3" target="_blank" class="hover:text-cyan-300"><i class="fab fa-github text-lg"></i></a>
+        <a href="mailto:adieeoffical@gmail.com" class="hover:text-cyan-300"><i class="fas fa-envelope text-lg"></i></a>
+        <a href="https://www.linkedin.com/in/aditya-more-682233274/" target="_blank" class="hover:text-cyan-300"><i class="fab fa-linkedin-in text-lg"></i></a>
+        <a href="https://medium.com/@adityamore7860" target="_blank" class="hover:text-cyan-300"><i class="fab fa-medium-m text-lg"></i></a>
       </div>
     </div>
   </footer>
+
+  <!-- Mobile menu script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger   = document.getElementById('burger');
+      const backdrop = document.getElementById('mobile-backdrop');
+      const menu     = document.getElementById('mobile-menu');
+      const icon     = burger.querySelector('i');
+
+      function openMenu() {
+        backdrop.classList.add('opacity-100', 'pointer-events-auto');
+        menu.classList.add('translate-x-0');
+        document.body.classList.add('overflow-hidden');
+        icon.classList.replace('ri-menu-line', 'ri-close-line');
+      }
+      function closeMenu() {
+        backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+        menu.classList.remove('translate-x-0');
+        document.body.classList.remove('overflow-hidden');
+        icon.classList.replace('ri-close-line', 'ri-menu-line');
+      }
+
+      burger.addEventListener('click', () =>
+        menu.classList.contains('translate-x-0') ? closeMenu() : openMenu()
+      );
+      backdrop.addEventListener('click', closeMenu);
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    });
+  </script>
 </body>
 </html>
