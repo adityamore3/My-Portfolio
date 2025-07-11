@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume — Aditya More</title>
+
+  <!-- Tailwind & Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* Star‑dot background */
+    body {
+      background-color: #0f172a;
+      background-image:
+        radial-gradient(#ffffff11 1px, transparent 1px),
+        radial-gradient(#ffffff11 1px, transparent 1px);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+    }
+    /* Resume image styling */
+    .resume-img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- NAVBAR -->
+  <nav class="fixed w-full bg-[#0f172a]/90 backdrop-blur-sm px-6 py-4 flex items-center justify-between z-50 shadow-md">
+  <a href="index.html" class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">&lt;Aditya More /&gt;</a>
+    <ul class="hidden md:flex space-x-8 items-center text-lg text-white">
+      <li><a href="index.html" class="hover:text-cyan-300 transition"><i class="ri-home-4-line mr-1"></i>Home</a></li>
+      <li><a href="about.html" class="hover:text-cyan-300 transition"><i class="ri-user-line mr-1"></i>About</a></li>
+      <li><a href="projects.html" class="hover:text-cyan-300 transition"><i class="ri-code-box-line mr-1"></i>Projects</a></li>
+      <li><a href="resume.html" class="text-cyan-300 transition"><i class="ri-file-list-line mr-1"></i>Resume</a></li>
+      <li><a href="blog.html" class="hover:text-cyan-300 transition"><i class="ri-discuss-line mr-1"></i>Blogs</a></li>
+    </ul>
+    <button class="md:hidden text-2xl text-white"><i class="ri-menu-line"></i></button>
+  </nav>
+
+  <!-- Top Download Button -->
+  <div class="pt-32 pb-6 flex justify-center">
+    <a
+      href="assets/Aditya More - ReactJS Developer - Resume.pdf"
+      download="Aditya_More_Resume.pdf"
+      class="inline-flex items-center px-8 py-3 bg-[#38bdf8] hover:bg-[#22d3ee] text-[#0f172a] font-semibold rounded-full shadow-lg transition"
+    >
+      <i class="fas fa-download mr-2"></i>
+      Download Resume
+    </a>
+  </div>
+
+  <!-- Resume Image Card -->
+  <div class="flex-grow flex justify-center px-4">
+    <div class="w-full max-w-4xl bg-white rounded-2xl overflow-hidden shadow-2xl">
+      <img
+        src="assets/Aditya More - ReactJS Developer - Resume.png"
+        alt="Aditya More Resume"
+        class="resume-img"
+      />
+    </div>
+  </div>
+
+  <!-- Bottom Download Button -->
+  <div class="pt-6 pb-16 flex justify-center">
+    <a
+      href="assets/Aditya More - ReactJS Developer - Resume.pdf"
+      download="Aditya_More_Resume.pdf"
+      class="inline-flex items-center px-8 py-3 bg-[#38bdf8] hover:bg-[#22d3ee] text-[#0f172a] font-semibold rounded-full shadow-lg transition"
+    >
+      <i class="fas fa-download mr-2"></i>
+      Download Resume
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-[#0f172a] text-white text-sm text-center py-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+      <span>Designed by Aditya More</span>
+      <span class="mt-2 md:mt-0">Copyright © 2025</span>
+      <div class="flex space-x-4 mt-4 md:mt-0 justify-center">
+        <a href="https://github.com/adityamore3" target="_blank" class="hover:text-cyan-300">
+          <i class="fab fa-github text-lg"></i>
+        </a>
+        <a href="mailto:adieeoffical@gmail.com" class="hover:text-cyan-300">
+          <i class="fas fa-envelope text-lg"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/aditya-more-682233274/" target="_blank" class="hover:text-cyan-300">
+          <i class="fab fa-linkedin-in text-lg"></i>
+        </a>
+        <a href="https://medium.com/@adityamore7860" target="_blank" class="hover:text-cyan-300">
+          <i class="fab fa-medium-m text-lg"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blogs — Aditya More</title>
+
+  <!-- Tailwind CSS & Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    /* Star‑dot background */
+    body {
+      background-color: #0f172a;
+      background-image:
+        radial-gradient(#ffffff11 1px, transparent 1px),
+        radial-gradient(#ffffff11 1px, transparent 1px);
+      background-size: 20px 20px;
+      background-position: 0 0, 10px 10px;
+    }
+    /* Wave separator (bottom of hero) */
+    .wave {
+      position: relative;
+      background: #0f172a;
+    }
+    .wave::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background-image: url("data:image/svg+xml,%3Csvg width='1440' height='80' viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%231e293b' d='M0,80 C360,0 1080,160 1440,80 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
+      background-size: cover;
+    }
+    /* Fade‑in animation for cards */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .blog-grid > div {
+      opacity: 0;
+      animation: fadeUp 0.6s ease-out forwards;
+    }
+    .blog-grid > div:nth-child(1) { animation-delay: 0.1s; }
+    .blog-grid > div:nth-child(2) { animation-delay: 0.2s; }
+    .blog-grid > div:nth-child(3) { animation-delay: 0.3s; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col text-white">
+
+  <!-- NAVBAR -->
+  <nav class="fixed w-full bg-[#0f172a]/90 backdrop-blur-sm px-6 py-4 flex items-center justify-between z-50 shadow-md">
+  <a href="index.html" class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">&lt;Aditya More /&gt;</a>
+    <ul class="hidden md:flex space-x-8 items-center text-lg">
+      <li><a href="index.html" class="hover:text-cyan-300 transition"><i class="ri-home-4-line mr-1"></i>Home</a></li>
+      <li><a href="about.html" class="hover:text-cyan-300 transition"><i class="ri-user-line mr-1"></i>About</a></li>
+      <li><a href="project.html" class="hover:text-cyan-300 transition"><i class="ri-code-box-line mr-1"></i>Projects</a></li>
+      <li><a href="resume.html" class="hover:text-cyan-300 transition"><i class="ri-file-list-line mr-1"></i>Resume</a></li>
+      <li><a href="blogs.html" class="text-cyan-300 transition"><i class="ri-discuss-line mr-1"></i>Blogs</a></li>
+    </ul>
+    <button class="md:hidden text-2xl"><i class="ri-menu-line text-white"></i></button>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="wave pt-32 pb-20 text-center">
+    <div class="container mx-auto px-4">
+      <h1 class="text-5xl font-extrabold">My <span class="text-cyan-400">Blog</span></h1>
+      
+      <p class="text-gray-400 mt-4 max-w-xl mx-auto">
+        I write about fitness, love, .NET and more on Medium. Dive in below for my latest pieces!
+      </p>
+      <div class="mt-8">
+        <a href="https://medium.com/@adityamore7860" target="_blank"
+           class="inline-flex items-center px-6 py-3 bg-[#38bdf8] hover:bg-[#22d3ee] text-[#0f172a] font-semibold rounded-full shadow-lg transition">
+          <i class="fab fa-medium mr-2"></i>
+          Visit My Medium
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG CARDS GRID -->
+  <main class="flex-grow container mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 blog-grid">
+
+      <!-- Card 1 -->
+      <div class="bg-[#1e293b] rounded-2xl overflow-hidden shadow-2xl hover:shadow-cyan-500/30 transition">
+        <img src="assets/images/image.png" 
+             alt="How I Overcame Weight Gain" 
+             class="w-full h-50 object-cover"/>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-white">
+            How I Overcame Weight Gain and Reclaimed My Fitness Motivation
+          </h3>
+          <p class="text-gray-400 mt-2 text-sm">
+            I woke up one recent morning feeling as though my body had turned to concrete — heavy, chilled to the bone… 
+          </p>
+          <a href="https://medium.com/@adityamore7860/how-i-overcame-weight-gain-and-reclaimed-my-fitness-motivation-8cde36127a4c"
+             target="_blank"
+             class="inline-block mt-4 text-[#38bdf8] hover:underline text-sm">
+            Read More → 
+          </a>
+        </div>
+      </div>
+
+     <!-- Card 2: Sunsets, Love... -->
+<div class="bg-[#1e293b] rounded-2xl overflow-hidden shadow-2xl hover:shadow-cyan-500/30 transition">
+  <!-- Use your downloaded file instead of Unsplash source -->
+  <img
+    src="assets/images/willian-justen-de-vasconcellos-7vKP5BAm8wg-unsplash.jpg"
+    alt="Sunsets, Love, and That One Perfect Date"
+    class="w-full h-50 object-cover"
+  />
+  <div class="p-6">
+    <h3 class="text-xl font-semibold text-white">
+      Sunsets, Love, and That One Perfect Date
+    </h3>
+    <p class="text-gray-400 mt-2 text-sm">
+      There’s something about sunsets — the way the sky blushes like it knows a secret, the way light dips into darkness…
+    </p>
+    <a
+      href="https://medium.com/@adityamore7860/sunsets-love-and-that-one-perfect-date-a4c8200b1a05"
+      target="_blank"
+      class="inline-block mt-4 text-[#38bdf8] hover:underline text-sm"
+    >
+      Read More →
+    </a>
+  </div>
+</div>
+
+
+      <!-- Card 3 -->
+      <div class="bg-[#1e293b] rounded-2xl overflow-hidden shadow-2xl hover:shadow-cyan-500/30 transition">
+        <img src="assets/images/image copy.png" 
+             alt="More Than Just a Day: Celebrating the Women Who Shape Us" 
+             class="w-full h-50 object-cover"/>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-white">
+            More Than Just a Day: Celebrating the Women Who Shape Us
+          </h3>
+          <p class="text-gray-400 mt-2 text-sm">
+            So, it’s Women’s Day today. A day when everyone suddenly remembers to appreciate women and the true heroes in our lives… 
+          </p>
+          <a href="https://medium.com/@adityamore7860/more-than-just-a-day-celebrating-the-women-who-shape-us-80c5d142ba6c"
+             target="_blank"
+             class="inline-block mt-4 text-[#38bdf8] hover:underline text-sm">
+            Read More → 
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- View All -->
+    <div class="text-center mt-12">
+      <a href="https://medium.com/@adityamore7860" target="_blank"
+         class="inline-flex items-center px-6 py-3 bg-[#38bdf8] hover:bg-[#22d3ee] text-[#0f172a] font-semibold rounded-full shadow-lg transition">
+        <i class="fas fa-arrow-right mr-2"></i>
+        View All Posts
+      </a>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-[#0f172a] text-white text-sm text-center py-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+      <span>Designed by Aditya More</span>
+      <span class="mt-2 md:mt-0">Copyright © 2025</span>
+      <div class="flex space-x-4 mt-4 md:mt-0 justify-center">
+        <a href="https://github.com/adityamore3" target="_blank" class="hover:text-cyan-300">
+          <i class="fab fa-github text-lg"></i>
+        </a>
+        <a href="mailto:adieeoffical@gmail.com" class="hover:text-cyan-300">
+          <i class="fas fa-envelope text-lg"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/aditya-more-682233274/" target="_blank" class="hover:text-cyan-300">
+          <i class="fab fa-linkedin-in text-lg"></i>
+        </a>
+        <a href="https://medium.com/@adityamore7860" target="_blank" class="hover:text-cyan-300">
+          <i class="fab fa-medium-m text-lg"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

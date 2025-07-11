@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Aditya More</title>
+
+  <!-- Tailwind CSS & Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    .wave::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -80px;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background-image: url("data:image/svg+xml,%3Csvg width='1440' height='80' viewBox='0 0 1440 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%230f172a' d='M0,80 C360,0 1080,160 1440,80 L1440,0 L0,0 Z'/%3E%3C/svg%3E");
+      background-size: cover;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-[#0f172a] text-white flex flex-col">
+
+  <!-- NAVBAR -->
+  <nav class="fixed w-full bg-[#0f172a]/90 backdrop-blur-sm px-6 py-4 flex items-center justify-between z-50 shadow-md">
+  <a href="index.html" class="text-2xl font-bold text-cyan-400 hover:text-cyan-300 transition">&lt;Aditya More /&gt;</a>
+    <ul class="hidden md:flex space-x-8 items-center text-lg text-white">
+      <li><a href="index.html" class="hover:text-cyan-300 transition"><i class="ri-home-4-line mr-1"></i>Home</a></li>
+      <li><a href="about.html" class="hover:text-cyan-300 transition"><i class="ri-user-line mr-1"></i>About</a></li>
+      <li><a href="projects.html" class="text-cyan-300 transition"><i class="ri-code-box-line mr-1"></i>Projects</a></li>
+      <li><a href="resume.html" class="hover:text-cyan-300 transition"><i class="ri-file-list-line mr-1"></i>Resume</a></li>
+      <li><a href="blog.html" class="hover:text-cyan-300 transition"><i class="ri-discuss-line mr-1"></i>Blogs</a></li>
+    </ul>
+    <button class="md:hidden text-2xl text-white"><i class="ri-menu-line"></i></button>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-grow pt-32 pb-20">
+    <section class="wave relative bg-[#0f172a] pt-24">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-5xl font-extrabold text-white">PROJECTS</h2>
+          
+          <p class="text-gray-400 mt-2">Some things I've built with .NET, React, and more</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Project Card 1 -->
+          <div class="bg-[#1e293b] rounded-2xl overflow-hidden shadow-xl hover:shadow-cyan-500/30 transition">
+            <img src="https://source.unsplash.com/400x200/?code,dotnet" alt="Project 1" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-white">Invoice Manager (.NET Core + React)</h3>
+              <p class="text-gray-400 mt-2 text-sm">A full-stack app for managing invoices with login, CRUD, and PDF exports.</p>
+              <div class="flex justify-between items-center mt-4 text-cyan-400 text-sm">
+                <a href="https://github.com/adityamore3/invoice-manager" target="_blank" class="hover:underline"><i class="fab fa-github mr-2"></i>Code</a>
+                <a href="https://invoice.aditya.dev" target="_blank" class="hover:underline"><i class="ri-external-link-line mr-1"></i>Live Demo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div class="bg-[#1e293b] rounded-2xl overflow-hidden shadow-xl hover:shadow-cyan-500/30 transition">
+            <img src="assets/images/image copy 2.png" alt="Project 2" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-white">Pet Heaven</h3>
+              <p class="text-gray-400 mt-2 text-sm">Built a Pet Haven, an eCommerce site using HTML, CSS, JavaScript, and ReactJS</p>
+              <div class="flex justify-between items-center mt-4 text-cyan-400 text-sm">
+                <a href="https://github.com/adityamore3/Pet-Haven" target="_blank" class="hover:underline"><i class="fab fa-github mr-2"></i>Code</a>
+                <a href="https://pet-haven-zeta.vercel.app/" target="_blank" class="hover:underline"><i class="ri-external-link-line mr-1"></i>Live Demo</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div class="bg-[#1e293b] rounded-2xl overflow-hidden shadow-xl hover:shadow-cyan-500/30 transition">
+            <img src="https://source.unsplash.com/400x200/?blog,tech" alt="Project 3" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-white">Dev Blog Platform</h3>
+              <p class="text-gray-400 mt-2 text-sm">A simple blogging app using ASP.NET Web API, EF Core, and Razor Pages.</p>
+              <div class="flex justify-between items-center mt-4 text-cyan-400 text-sm">
+                <a href="https://github.com/adityamore3/dev-blog" target="_blank" class="hover:underline"><i class="fab fa-github mr-2"></i>Code</a>
+                <a href="#" class="hover:underline"><i class="ri-external-link-line mr-1"></i>Coming Soon</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="w-full bg-[#0f172a] text-white text-sm text-center py-6">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+      <span>Designed by Aditya More</span>
+      <span class="mt-2 md:mt-0">Copyright © 2025</span>
+      <div class="flex space-x-4 mt-4 md:mt-0 justify-center">
+        <a href="https://github.com/adityamore3" target="_blank" class="hover:text-cyan-300">
+          <i class="fab fa-github text-lg"></i>
+        </a>
+        <a href="mailto:adieeoffical@gmail.com" class="hover:text-cyan-300">
+          <i class="fas fa-envelope text-lg"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/aditya-more-682233274/" target="_blank" class="hover:text-cyan-300">
+          <i class="fab fa-linkedin-in text-lg"></i>
+        </a>
+        <a href="https://medium.com/@adityamore7860" target="_blank" class="hover:text-cyan-300">
+          <i class="fab fa-medium-m text-lg"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
